@@ -1,0 +1,17 @@
+﻿@model List<ClienteRazor.Models.Persona>
+
+@{
+    ViewData["Title"] = "grids view";
+}
+
+@{
+    ViewBag.Title = "Personas";
+    WebGrid grid = new WebGrid(Model);
+}
+
+<h1>vista tipo grid</h1>
+
+
+<div id="grid">
+    @grid.GetHtml()
+</div>
