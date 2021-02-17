@@ -26,8 +26,8 @@ namespace ClienteRazor.Controllers
             string Url = "https://localhost:44326/api/agreement";
             WebClient wc = new WebClient();
             var perso = wc.DownloadString(Url);
-            var rs = JsonConvert.DeserializeObject<Persona>(perso);
-            foreach(var pe in rs.results)
+            var rs = JsonConvert.DeserializeObject<List<Result>>(perso);
+            foreach(var pe in rs)
             {
                 person.Add(pe);
             }

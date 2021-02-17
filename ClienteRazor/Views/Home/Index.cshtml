@@ -1,4 +1,4 @@
-﻿@model List<ClienteRazor.Models.Persona>
+﻿@Model List<ClienteRazor.Models.Persona>
 
 @{
     ViewData["Title"] = "grids view";
@@ -6,12 +6,28 @@
 
 @{
     ViewBag.Title = "Personas";
-    WebGrid grid = new WebGrid(Model);
 }
 
 <h1>vista tipo grid</h1>
 
-
-<div id="grid">
-    @grid.GetHtml()
-</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>nombre</th>
+            <th>descripcion</th>
+            <th>valor</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var r in Model)
+        {
+            <tr>
+                <td>@r.Id</td>
+                <td>@r.Name</td>
+                <td>@r.Description</td>
+                <td>@r.Amount</td>
+            </tr>
+        }
+    </tbody>
+</table>

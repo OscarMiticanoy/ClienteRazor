@@ -21,9 +21,4 @@ namespace ClienteRazor.Models
         public int Amount { get; set; }
     }
 
-    public class Persona
-    {
-        public List<Result> results { get; set; }
-
-    }
 }
